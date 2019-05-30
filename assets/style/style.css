@@ -62,7 +62,7 @@ html, body {
   -webkit-backdrop-filter: blur(10px);
 }
 
-#today, #weekdays, #beforeRed, #red {
+#today_column, #weekdays_column, #beforeRed_column, #red_column {
   display: flex;
   flex-direction: row;
 }
