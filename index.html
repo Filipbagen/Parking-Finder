@@ -9,51 +9,43 @@
 </head>
 <body>
   
-  <div id="app">
-        <div id="map"></div>
+<div id="app">
+
+  <div id="button" onclick="getCurrentLocation()"><img id="img" src="assets/img/location.svg" alt=""></div>
+
+    <div id="map"></div>
+
     <div class="dock">
+        <hr id="top">
+          <h1 id="place">Parkeringsplats</h1>
+          <hr class="line">
 
-      <hr id="top">
+          <div id="today_column">
+            <h2 id="today">Idag</h2>
+            <h2 id="today_time">00:00</h2>
+          </div>
 
-      <h1>Ansgarskyrkan</h1>
+          <hr class="line">
 
-      <hr class="line">
+          <div id="day">
+            <div class="days">
+              <h3>Vardagar</h3>
+              <h3>Dag före röd dag</h3>
+              <h3>Röd dag</h3>
+            </div>
 
-      <div id="today_column">
-        <h2 id="today">Idag</h2>
-        <h2 id="today_time">Gratis hela dagen!</h2>
-      </div>
-
-      <hr class="line">
-
-      <div id="openingHours">
-        <div id="weekdays_column">
-          <h3 id="weekdays">Vardagar</h3>
-          <h3 id="weekdays_time">Aldrig gratis</h3>
+            <div class="time">
+              <h3 id="weekdays_time">00:00</h3>
+              <h3 id="beforeRed">00:00</h3>
+              <h3 id="red_time">00:00</h3>
+            </div>
         </div>
-
-        <div id="beforeRed_column">
-          <h3 id="beforeRed">Dag före röd dag</h3>
-          <h3 id="beforeRed_time">Gratis från 02:00-06:00</h3>
-        </div>
-
-        <div id="red_column">
-          <h3 id="red">Röd dag</h3>
-          <h3 id="red_time">Gratis hela dagen!</h3>
-        </div>
-
-      </div>
-
     </div>
-
-    <button style="background: url(assets/img/location.svg)" onclick="getCurrentLocation()"></button>
-
-
-  </div>
+    <!-- <button style="background: url(assets/img/location.svg)" onclick="getCurrentLocation()"></button> -->
+</div>
 
 
   <script src="assets/script/map.js"></script>
-  <script src="assets/script/openingHours.js"></script>
   <script src="assets/script/parkings.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQUkVTGAReqtlLuQ9ZE1hRIH-d9O62Nao&callback=initMap">
     </script>
