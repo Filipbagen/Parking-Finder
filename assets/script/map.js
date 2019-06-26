@@ -10,7 +10,7 @@ const initMap = () => {
   })
 
   // Construct the polygon.
-  const parking1 = new google.maps.Polygon({
+  const Master_Ahls_gata_8 = new google.maps.Polygon({
     paths: parking,
     strokeColor: '#18A718',
     strokeOpacity: 0.8,
@@ -20,11 +20,12 @@ const initMap = () => {
     id: '1',
     weekday: '10:00 - 20:00',
     beforered: '10:00 - 21:00',
-    red: 'Stängt'
+    red: 'Stängt',
+    place: 'Mäster Ahls gata'
   })
 
-  parking1.setMap(map)
-  parkings.push(parking1)
+  Master_Ahls_gata_8.setMap(map)
+  parkings.push(Master_Ahls_gata_8)
 
   const ansgars = new google.maps.Polygon({
     paths: ansgarsNorth,
@@ -33,7 +34,10 @@ const initMap = () => {
     strokeWeight: 2,
     fillColor: '#23E025',
     fillOpacity: 0.4,
-    id: '2'
+    id: '2',
+    weekday: 'Alltid gratis',
+    beforered: 'Alltid gratis',
+    red: 'Alltid gratis'
   })
 
   ansgars.setMap(map)
@@ -106,6 +110,7 @@ const dockUp = (parking) => {
   document.querySelector('#weekdays_time').textContent = parking.weekday
   document.querySelector('#beforeRed').textContent = parking.beforered
   document.querySelector('#red_time').textContent = parking.red
+  document.querySelector('#place').textContent = parking.place
   document.querySelector('.dock').classList.add('up')
 
   if (getDayString() >= 1 || getDayString() <= 5) {
@@ -122,6 +127,11 @@ const dockUp = (parking) => {
 
 const dockDown = () => {
   document.querySelector('.dock').classList.remove('up')
+  document.querySelector('#weekdays_time').textContent = '00:00'
+  document.querySelector('#today_time').textContent = '00:00'
+  document.querySelector('#beforeRed').textContent = '00:00'
+  document.querySelector('#red_time').textContent = '00:00'
+  document.querySelector('#place').textContent = 'Parking'
 }
 
 window['initMap'] = initMap
